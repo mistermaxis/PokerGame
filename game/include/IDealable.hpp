@@ -5,23 +5,23 @@
 
 class IDealable {
 public:
-	virtual void Deal(const Card) = 0;
+	virtual void deal(const Card) = 0;
 };
 
 class Dealable : public IDealable {
 private:
-	std::vector<Card> Cards;
+	std::vector<Card> cards;
 protected:
 	Dealable() {}
 public:
-	virtual void Deal(const Card card) { Cards.push_back(card); }
+	virtual void deal(const Card card) { cards.push_back(card); }
 	
 	void PrintCards() {
-		for (auto card : Cards) {
-			std::cout << card.GetNumber().getValueName() << " of " << card.GetSuit().getSuitName() << "\n";
+		for (auto card : cards) {
+			std::cout << card.getNumber().getValueName() << " of " << card.getSuit().getSuitName() << "\n";
 		}
 	}
-	std::vector<Card> ShowCards() const { return Cards; }
+	std::vector<Card> showCards() const { return cards; }
 };
 
 class BurnCard : public Dealable {

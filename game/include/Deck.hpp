@@ -16,13 +16,13 @@ class Deck
 		Deck() { deck.assign( DECK_SIZE, false); }
 		~Deck() { }
 		
-		const Card GetCard()
+		const Card getCard()
 		{
 			srand((unsigned int)time(nullptr));
 			unsigned long value_;
 			unsigned long suit_;
-			std::string value_string;
-			std::string suit_string;
+			std::string valueString;
+			std::string suitString;
 			unsigned long id_;
 
 			do
@@ -37,43 +37,43 @@ class Deck
 			switch (value_)
 			{
 			case 0:
-				value_string = "Ace";
+				valueString = "Ace";
 				break;
 			case 1:
-				value_string = "Two";
+				valueString = "Two";
 				break;
 			case 2:
-				value_string = "Three";
+				valueString = "Three";
 				break;
 			case 3:
-				value_string = "Four";
+				valueString = "Four";
 				break;
 			case 4:
-				value_string = "Five";
+				valueString = "Five";
 				break;
 			case 5:
-				value_string = "Six";
+				valueString = "Six";
 				break;
 			case 6:
-				value_string = "Seven";
+				valueString = "Seven";
 				break;
 			case 7:
-				value_string = "Eight";
+				valueString = "Eight";
 				break;
 			case 8:
-				value_string = "Nine";
+				valueString = "Nine";
 				break;
 			case 9:
-				value_string = "Ten";
+				valueString = "Ten";
 				break;
 			case 10:
-				value_string = "Jack";
+				valueString = "Jack";
 				break;
 			case 11:
-				value_string = "Queen";
+				valueString = "Queen";
 				break;
 			case 12:
-				value_string = "King";
+				valueString = "King";
 			default:
 				break;
 			}
@@ -81,22 +81,22 @@ class Deck
 			switch (suit_)
 			{
 			case 0:
-				suit_string = "Clubs";
+				suitString = "Clubs";
 				break;
 			case 1:
-				suit_string = "Spades";
+				suitString = "Spades";
 				break;
 			case 2:
-				suit_string = "Hearts";
+				suitString = "Hearts";
 				break;
 			case 3:
-				suit_string = "Diamonds";
+				suitString = "Diamonds";
 				break;
 			default:
 				break;
 			}
 
-			Card card(id_, NumberType(value_, value_string), SuitType(suit_, suit_string));
+			Card card(id_, NumberType(value_, valueString), SuitType(suit_, suitString));
 
 			return card;
 		}

@@ -1,56 +1,56 @@
 #include "Game.hpp"
 
-void Game::Start()
+void Game::start()
 {
 	std::cout << "Game Started\n";
 }
 
-void Game::DealPocketCards()
+void Game::dealPocketCards()
 {
 	for (auto& player : pokerPlayers)
 	{
-		pokerDealer->Deal(player);
+		pokerDealer->deal(player);
 	}
 
 	for (auto& player : pokerPlayers)
 	{
-		pokerDealer->Deal(player);
+		pokerDealer->deal(player);
 	}
 }
 
-void Game::DealFlop()
+void Game::dealFlop()
 {
-	pokerDealer->Deal(burnCard);
-	pokerDealer->Deal(table);
-	pokerDealer->Deal(table);
-	pokerDealer->Deal(table);
+	pokerDealer->deal(burnCard);
+	pokerDealer->deal(table);
+	pokerDealer->deal(table);
+	pokerDealer->deal(table);
 }
 
-void Game::DealTurn()
+void Game::dealTurn()
 {
-	pokerDealer->Deal(burnCard);
-	pokerDealer->Deal(table);
+	pokerDealer->deal(burnCard);
+	pokerDealer->deal(table);
 }
 
-void Game::DealRiver()
+void Game::dealRiver()
 {
-	pokerDealer->Deal(burnCard);
-	pokerDealer->Deal(table);
+	pokerDealer->deal(burnCard);
+	pokerDealer->deal(table);
 }
 
-void Game::CompareHands(std::vector<Hand> hands)
+void Game::compareHands(std::vector<Hand> hands)
 {
 
 }
 
-void Game::ShowPlayersHands()
+void Game::showPlayersHands()
 {
 	std::cout << "Table Cards: \n\n";
 	table.PrintCards();
 	
 	for (auto player : pokerPlayers)
 	{
-		std::cout << "\n" << player.GetName() << "\'s Cards:\n\n";
+		std::cout << "\n" << player.getName() << "\'s Cards:\n\n";
 		player.PrintCards();
 	}
 }

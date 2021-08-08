@@ -4,13 +4,13 @@
 class IPlayer : public Dealable, public Payable {
 	//std::vector<Card> Hand;
 protected:
-	std::string Name;
+	std::string name;
 public:
-	std::string GetName() { return Name; }
+	const std::string& getName() const { return name; }
 };
 
 class PokerPlayer : public IPlayer {
 public:
-	PokerPlayer(std::string name) { Name = name; }
+	PokerPlayer(std::string name_) { name = name_; }
 	~PokerPlayer() { }
 };

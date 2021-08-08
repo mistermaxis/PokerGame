@@ -4,7 +4,7 @@
 
 class IDealer {
 	public:
-	virtual void Deal(Dealable& dealable) = 0;
+	virtual void deal(Dealable& dealable) = 0;
 	virtual ~IDealer() {};
 };
 
@@ -15,8 +15,8 @@ public:
 	PokerDealer() { }
 	~PokerDealer() { }
 	
-	virtual void Deal(Dealable& dealable)
+	virtual void deal(Dealable& dealable)
 	{
-		dealable.Deal(deck.GetCard());
+		dealable.deal(deck.getCard());
 	}
 };

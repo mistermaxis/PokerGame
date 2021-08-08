@@ -17,8 +17,8 @@ public:
 };
 
 class Payable : public IPayable {
-	ChipsStack Chips = 0;
-	virtual void Bet(unsigned amount) { Chips.RemoveChips(amount); }
-	virtual void Collect(unsigned amount) { Chips.AddChips(amount); }
-	virtual void Pay(IPayable& payee, unsigned amount) { Chips.RemoveChips(amount); payee.Collect(amount); }
+	ChipsStack chips = 0;
+	virtual void Bet(unsigned amount) { chips.RemoveChips(amount); }
+	virtual void Collect(unsigned amount) { chips.AddChips(amount); }
+	virtual void Pay(IPayable& payee, unsigned amount) { chips.RemoveChips(amount); payee.Collect(amount); }
 };

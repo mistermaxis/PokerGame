@@ -15,16 +15,16 @@ private:
 	void DealFlop();
 	void DealTurn();
 	void DealRiver();*/
-	void CompareHands(std::vector<Hand> hands);
+	void compareHands(std::vector<Hand> hands);
 public:
-	Game() { pokerDealer = std::unique_ptr<PokerDealer>(new PokerDealer); }
+	Game() { pokerDealer = std::make_unique<PokerDealer>(); }
 	~Game() {  }
 
-	void Start();
-	void AddPlayer(std::string player_name) { pokerPlayers.emplace_back(PokerPlayer(player_name)); }
-	void ShowPlayersHands();
-	void DealPocketCards();
-	void DealFlop();
-	void DealTurn();
-	void DealRiver();
+	void start();
+	void addPlayer(std::string player_name) { pokerPlayers.emplace_back(PokerPlayer(player_name)); }
+	void showPlayersHands();
+	void dealPocketCards();
+	void dealFlop();
+	void dealTurn();
+	void dealRiver();
 };

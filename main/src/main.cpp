@@ -4,27 +4,27 @@ int main()
 {	
 	Game pokerGame;
 
-	pokerGame.AddPlayer("John");
-	pokerGame.AddPlayer("George");
-	pokerGame.AddPlayer("Julio");
+	pokerGame.addPlayer("John");
+	pokerGame.addPlayer("George");
+	pokerGame.addPlayer("Julio");
 	
-	pokerGame.DealPocketCards();
+	pokerGame.dealPocketCards();
 
 	//TODO Take Bets
 	
-	pokerGame.DealFlop();
+	pokerGame.dealFlop();
 
 	//TODO Take Bets
 
-	pokerGame.DealTurn();
+	pokerGame.dealTurn();
 	
 	//TODO Take Bets
 
-	pokerGame.DealRiver();
+	pokerGame.dealRiver();
 
 	//TODO Take Bets
 
-	pokerGame.ShowPlayersHands();
+	pokerGame.showPlayersHands();
 
 	return 0;
 }
